@@ -9,7 +9,6 @@ import {
   DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Users2, UserPlus2, ScanLine, MapPin } from "lucide-react";
-import { toast } from "sonner";
 
 const ChatList = () => {
   const [cat, setCat] = useState<ChatCategory>("single");
@@ -39,16 +38,16 @@ const ChatList = () => {
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-44">
-              <DropdownMenuItem onClick={() => toast("发起群聊", { description: "从通讯录添加好友 (原型)" })}>
+              <DropdownMenuItem onClick={() => navigate("/new-group")}>
                 <Users2 className="size-4 mr-2" /> 发起群聊
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => toast("面对面建群", { description: "100m 范围内 (原型)" })}>
+              <DropdownMenuItem onClick={() => navigate("/face-to-face")}>
                 <MapPin className="size-4 mr-2" /> 面对面建群
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => toast("添加好友", { description: "搜索 Echo 号" })}>
+              <DropdownMenuItem onClick={() => navigate("/add-friend")}>
                 <UserPlus2 className="size-4 mr-2" /> 添加好友
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => toast("扫一扫", { description: "二维码 (原型)" })}>
+              <DropdownMenuItem onClick={() => navigate("/scan")}>
                 <ScanLine className="size-4 mr-2" /> 扫一扫
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -61,7 +60,7 @@ const ChatList = () => {
               <input
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
-                placeholder="搜索 · 试试说 “搜索三毛”"
+                placeholder='搜索 · 试试说 "搜索三毛"'
                 className="w-full h-9 pl-9 pr-9 rounded-xl bg-secondary text-[13px] placeholder:text-armani focus:outline-none"
               />
               <button onClick={() => setVoiceOpen(true)} className="absolute right-2 top-1/2 -translate-y-1/2 size-7 rounded-lg flex items-center justify-center text-primary">
@@ -80,9 +79,6 @@ const ChatList = () => {
                   }`}
                 >
                   {c.label}
-                  {c.id === "public" && <span className="ml-1 opacity-70">加入</span>}
-                  {c.id === "channel" && <span className="ml-1 opacity-70">订阅</span>}
-                  {c.id === "agent" && <span className="ml-1 opacity-70">订阅</span>}
                 </button>
               ))}
             </div>
