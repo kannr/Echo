@@ -39,6 +39,19 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        armani: {
+          DEFAULT: "hsl(var(--armani))",
+          deep: "hsl(var(--armani-deep))",
+        },
+        sand: {
+          DEFAULT: "hsl(var(--primary-soft))",
+        },
+        bubble: {
+          out: "hsl(var(--bubble-out))",
+          "out-foreground": "hsl(var(--bubble-out-foreground))",
+          in: "hsl(var(--bubble-in))",
+          "in-foreground": "hsl(var(--bubble-in-foreground))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
