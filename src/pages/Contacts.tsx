@@ -1,13 +1,17 @@
 import TopBar from "@/components/echo/TopBar";
 import Avatar from "@/components/echo/Avatar";
-import { friends, friendRequests } from "@/data/echo";
+import { friends, friendRequests, allFriendTags } from "@/data/echo";
 import { Plus, Search } from "lucide-react";
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 
 type Tab = "friends" | "groups" | "requests";
+type FriendFilter = "letter" | "tag";
 
 const Contacts = () => {
   const [tab, setTab] = useState<Tab>("friends");
+  const [filter, setFilter] = useState<FriendFilter>("letter");
+  const [activeTag, setActiveTag] = useState<string>(allFriendTags[0]);
 
   const grouped = useMemo(() => {
     const map = new Map<string, typeof friends>();
@@ -18,6 +22,8 @@ const Contacts = () => {
     });
     return Array.from(map.entries()).sort(([a], [b]) => a.localeCompare(b));
   }, []);
+
+  const byTag = useMemo(() => friends.filter((f) => f.tags.includes(activeTag)), [activeTag]);
 
   return (
     <>
@@ -45,32 +51,66 @@ const Contacts = () => {
                 </button>
               ))}
             </div>
+            {tab === "friends" && (
+              <div className="flex items-center gap-2">
+                <div className="inline-flex rounded-full bg-secondary p-0.5 text-[11px]">
+                  <button onClick={() => setFilter("letter")} className={`px-2.5 py-1 rounded-full ${filter === "letter" ? "bg-card ring-soft text-foreground" : "text-armani-deep"}`}>字母</button>
+                  <button onClick={() => setFilter("tag")}    className={`px-2.5 py-1 rounded-full ${filter === "tag"    ? "bg-card ring-soft text-foreground" : "text-armani-deep"}`}>标签</button>
+                </div>
+                {filter === "tag" && (
+                  <div className="flex gap-1.5 overflow-x-auto no-scrollbar flex-1">
+                    {allFriendTags.map((t) => (
+                      <button key={t} onClick={() => setActiveTag(t)}
+                        className={`shrink-0 h-7 px-2.5 rounded-full text-[11px] ${activeTag === t ? "bg-primary text-primary-foreground" : "bg-secondary text-armani-deep"}`}>
+                        {t}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         }
       />
 
       <div className="flex-1 overflow-y-auto">
-        {tab === "friends" && (
+        {tab === "friends" && filter === "letter" && (
           <ul>
             {grouped.map(([letter, items]) => (
               <li key={letter}>
                 <div className="px-4 py-1.5 text-[11px] text-armani bg-secondary/50">{letter}</div>
                 {items.map((f) => (
-                  <div key={f.id} className="flex items-center gap-3 px-4 py-2.5">
+                  <Link to={`/friend/${f.id}`} key={f.id} className="flex items-center gap-3 px-4 py-2.5 active:bg-secondary/70">
                     <Avatar name={f.name} size={40} />
                     <div className="flex-1 min-w-0">
                       <div className="text-[14px]">{f.name}</div>
                       {f.tags.length > 0 && (
                         <div className="flex gap-1 mt-0.5">
                           {f.tags.map((t) => (
-                            <span key={t} className="text-[10px] px-1.5 py-0.5 rounded bg-sand text-primary">{t}</span>
+                            <span key={t} className="text-[10px] px-1.5 py-0.5 rounded bg-accent/40 text-primary">{t}</span>
                           ))}
                         </div>
                       )}
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </li>
+            ))}
+          </ul>
+        )}
+
+        {tab === "friends" && filter === "tag" && (
+          <ul>
+            {byTag.length === 0 ? (
+              <li className="text-center text-armani text-sm mt-10">该标签下暂无好友</li>
+            ) : byTag.map((f) => (
+              <Link to={`/friend/${f.id}`} key={f.id} className="flex items-center gap-3 px-4 py-2.5 active:bg-secondary/70">
+                <Avatar name={f.name} size={40} />
+                <div className="flex-1 min-w-0">
+                  <div className="text-[14px]">{f.name}</div>
+                  <div className="text-[11px] text-armani">{f.tags.join(" · ")}</div>
+                </div>
+              </Link>
             ))}
           </ul>
         )}
