@@ -209,8 +209,7 @@ const ChatRoom = () => {
       case "videoCall":
       case "transVideoCall":
         return [
-          { id: "report", label: "视频总结报告", hint: "画面 + 语音综合摘要", onClick: () => toast("视频报告", { description: "已生成章节摘要") },
-          },
+          { id: "report", label: "视频总结报告", hint: "画面 + 语音综合摘要", onClick: () => toast("视频报告", { description: "已生成章节摘要" }) },
           { id: "redial", label: "重新视频" },
         ];
       case "voice":
