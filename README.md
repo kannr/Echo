@@ -1,146 +1,170 @@
-# Echo - AI Native Messaging Protocol
+# Echo - AI Native Messaging
 
 [English] | [简体中文](./README_zh.md)
 
-**Echo** 是一款 AI 原生即时通讯工具，旨在打造全球化自然交流体验。其核心理念是“自然”，让一切回归自然规律。Echo 的名字源自作家三毛的英文名，整体视觉采用**撒哈拉沙漠色调**，寓意在广袤中寻找爱、传递爱，帮助用户了解自我，找到自己喜欢的人，一同做自己喜欢的事。
+**Echo** is an AI-native instant messaging tool designed to create a globalized natural communication experience. Its core philosophy is "Nature"—letting everything follow the laws of nature, where communication occurs in the most natural human way, focusing on the communication itself while iterating on real needs before, during, and after the interaction. The name Echo is inspired by the English name of the writer San Mao, who was a very natural soul. The visual identity adopts **Sahara Desert tones**, symbolizing the search for and transmission of love across vast landscapes, helping users understand themselves, find people they love, and do the things they love together.
 
 ---
 
-## 一、 聊天
+## I. Chat
 
-Echo 提供**语音控制**与**手动输入**双模式。语音控制模式通过喊出 "Echo" 唤醒，适用于运动、驾驶、泡澡及特殊群体（老人、盲人、儿童）；手动模式则接纳并优化现有交互习惯。最有挑战的事是对不同的语言、方言的准确识别，前期做一个理解确认，理解有误及时调整，准确率上来以后，无需确认，直接去执行。手动输入模式主要为了适应现有的习惯，虽然它并不是最自然的方式，由于形成了习惯，将持续存在很长的阶段。我们无需打破习惯，接纳习惯，但是提供更好的交互方式。
+Echo provides dual modes: **Voice Control** and **Manual Input**. The Voice Control mode is activated by calling out "Echo," suitable for exercise, driving, bathing, and specific groups (the elderly, the blind, and children); Manual Input mode adopts and optimizes existing interaction habits. The primary challenge lies in the accurate recognition of different languages and dialects. In the early stages, a "confirmation of understanding" will be performed, with real-time adjustments if the interpretation is incorrect. Once accuracy improves, actions will be executed directly without confirmation. Manual Input exists primarily to accommodate current habits; although not the most natural way, it will persist for a long time due to established behaviors. We do not need to break habits, but rather embrace them while providing a superior interaction alternative.
 
-### 1.1 核心交互功能
-单聊/群聊/频道/智能体主界面，点击主界面“+”号可发起以下操作：
-- **发送照片**：语音指令驱动 AI 查找，人工确认后发送。
-- **发送文件**：支持任意文件传输，支持 PDF, TXT, ZIP, Office, EPUB, KeyNote, Pages 等打开。
-- **拍摄**：直接拍摄视频或照片。
-- **电话**：拨打网络语音电话。
-- **视频**：拨打视频电话。
-- **翻译电话**：拨打实时翻译电话，200毫秒延迟以内。
-- **翻译视频**：拨打实时翻译视频，声音部分会自动化翻译。
-- **语音**：按住发送一段语音消息。
-- **位置**：支持高德/Google/Apple 地图。
-- **面基邀请**：陌生人初次见面
-    - 已见面，点击确认，需要单聊双方或者群成员群实地GPS重合才能确认
-    - 确认后可进行“隐式评价”，少数几个选择题+文字描述，评价的分数不可见，仅仅系统记录，轻微影响这个人的系统生态信誉，强影响彼此的好感度相关。
+### 1.1 Core Interaction Features
 
-### 1.2 消息展示形式
-单聊/群聊/频道/智能体点进去以后，demo消息每一种一条消息，展示形式如下：
-- **照片消息**：一张照片的占位符。长按可以提取文字，翻译，呈现原图和对比图展示在一起，上下对照。
-- **视频消息**：和图片类似，但是有播放按钮。支持自动添加源语言和母语的翻译字幕。
-- **链接消息**：点击链接有两种方式，一种是翻译打开，一种是直接打开
-- **文件消息**：支持打开PDF，TXT，ZIP，OFFICE，EPUB，KeyNote，Numbers，Pages等，长按：可以翻译。翻译后有翻译的版本在云端，可以发送翻译版给别人。
-- **电话消息**：展示通话时长 12:12 + 电话图标，电话结束了，长按出电话总结报告。发起方可以发起录制电话，接听方可以直接接听（不接受录制），也可以确认录制接听。
-- **翻译电话消息**：通话时长 12:12 + 翻译电话图标。电话结束了，长按出电话总结报告。发起方可以发起录制电话，接听方可以直接接听（不接受录制），也可以确认录制接听。
-- **视频消息**：通话时长 12:12 + 视频图标。电话结束了，长按出视频总结报告。发起方可以发起录制电话，接听方可以直接接听（不接受录制），也可以确认录制接听。
-- **翻译视频消息**：通话时长 12:12 + 翻译视频图标。电话结束了，长按出视频总结报告。发起方可以发起录制电话，接听方可以直接接听（不接受录制），也可以确认录制接听。
-- **语音消息**：展示语音/语音+文字。长按：可以查看原始消息/可以展示原始文本+翻译后的文本。
-- **位置消息**：发送位置。
-- **名片消息**：发送一个联系人。昵称 + Echo号。
-- **发送面基邀请消息**：带一个确认按钮，点击确认，会自动校验GPS定位，确认面基以后，可以评价。评价的分数不可见，系统记录，影响这个人的系统生态信誉，但是私密不可见。
+On the main interface for Private Chats/Group Chats/Channels/Agents, clicking the "+" button enables the following:
 
-### 1.3 私群
-默认一个话题，可以新建若干个话题。
+  - **Send Photo**: AI searches for and selects photos based on voice commands; requires manual confirmation before sending.
+  - **Send File**: Supports any file transfer; supports opening PDF, TXT, ZIP, Office, EPUB, Keynote, Numbers, Pages, etc.
+  - **Camera**: Take and send a video or photo.
+  - **Call**: Make a VoIP voice call.
+  - **Video**: Make a video call.
+  - **Translated Call**: Real-time translated voice calls with less than 200ms latency.
+  - **Translated Video**: Real-time translated video calls where the audio is automatically translated.
+  - **Voice**: Hold to send a voice message.
+  - **Location**: Send locations from Amap/Google/Apple Maps.
+  - **Meetup Invitation**: For first-time meetings between strangers.
+      - Once met, click to confirm. This requires the real-time GPS of both parties (or group members) to overlap for confirmation.
+      - After confirmation, an "Implicit Evaluation" can be performed (a few multiple-choice questions + text description). Scores are invisible and recorded only by the system, slightly affecting the person's ecological reputation and strongly influencing mutual affinity metrics.
 
-### 1.4 聊天右上角+号
-- **发起群聊**：跳转到通讯录添加好友，勾选以后添加成员，创建成一个群，名字有好友的昵称组成，30字内。
-- **面对面建群**：点击以后输入一个2位的数字之后，直接入群，此时会校验群的GPS定位和申请人是否在100米以内。
-- **添加好友**：点击进入到搜索页面，输入Echo号进行搜索，审核通过可成为好友
-- **扫一扫**：扫一扫弹出扫码的页面，识别二维码后，添加好友
+### 1.2 Message Display Formats
 
-### 1.5 智能体
-已经从发现中订阅的智能体。
-- **官方智能体**：可以付费跟官方要资源、人才等等。
-- **分身智能体**：用户本体的智能体，用于管理其他智能体
-- **订阅智能体**：从发现中订阅的智能体
-- **交互逻辑**：智能体自动生成选择题确认，都确认清楚了以后，进行任务的执行，最后的结果进行交互是否达到预期，做二次修正。
-- **产出**：最终的成品可以发送至邮箱或者存放在云端。
+Within Private Chats/Group Chats/Channels/Agents, demo messages for each type are displayed as follows:
 
-### 1.6 公群
-已经从发现中加入的社区。
-- **升级规则**：人数500+热度达到一定程度，自动升级话题群。公群创建话题：成员可以切换话题，进行聊天。
-- **规则更新**：更新公群规则，自动发起投票，收集群成员的意见，通过的条款生效，不通过的不生效。每个人的票的有效性根据贡献度计算，不是平均计算。
-- **更多栏目**：右上角3个点更多，点进去以后，可以看到4个栏目：公群的成员，精华贴，规则，AI总结报告。精华贴和AI总结报告按照topic划分。精华贴有一个加号，用于创作图文 + 视频 + 语音的帖子。
-- **语音房**：群主可以发送语音房聊天，支持限定人数的人上麦，其他人只能听，群成员可申请上麦，群主或者管理员审核通过以后，上麦，人数不够时，选择替换即可。
+  - **Photo Message**: A photo placeholder. Long-press to extract text, translate, and view the original versus comparison side-by-side or top-to-bottom.
+  - **Video Message**: Similar to photos but with a play button. Supports automatic translation subtitles for both source and native languages.
+  - **Link Message**: Two ways to open: Translated view or Direct view.
+  - **File Message**: Supports PDF, TXT, ZIP, Office, EPUB, Keynote, Numbers, Pages, etc. Long-press to translate; translated versions are stored in the cloud and can be sent to others.
+  - **Call Message**: Displays duration (e.g., 12:12) + call icon. Long-press after the call for an AI summary report. The caller can initiate recording; the receiver can answer directly (reject recording) or confirm and record.
+  - **Translated Call Message**: Duration (e.g., 12:12) + translated call icon. Long-press after the call for an AI summary report. Supports recording permissions as above.
+  - **Video Message**: Duration (e.g., 12:12) + video icon. Long-press after the call for an AI summary report. Supports recording permissions as above.
+  - **Translated Video Message**: Duration (e.g., 12:12) + translated video icon. Long-press after the call for an AI summary report. Supports recording permissions as above.
+  - **Voice Message**: Displays Voice or Voice + Text. Long-press to view the original message or show original text + translated text.
+  - **Location Message**: Sends a location.
+  - **Contact Card**: Sends a contact. Nickname + Echo ID.
+  - **Meetup Invitation Message**: Includes a confirmation button. Clicking it triggers a GPS verification. After confirmation, evaluations can be submitted (invisible to the user, impacting system reputation).
 
-### 1.7 频道
-已经从发现中订阅的频道。
-- **视角差异**：从粉丝的视角就是单聊，从频道主的视角是一个群，有无数个话题，可以AI自动化的回复，支持训练智能体。
-- **权限限制**：发起电话、视频只能由频道主发起，粉丝没有权限。
+### 1.3 Private Groups
 
-### 1.8 输入法
-- **语音优先**：以语音为主，默认语音，语音直接发。也可以切文字模式打字发送。记住上一次使用的模式。支持安装方言插件（可以自己做一个插件，发布插件）。
-- **语音展示**：文字模式/语音模式/语音+文字模式。
+One topic by default; multiple topics can be created.
 
-### 1.9 排列顺序
-单聊、私群、智能体、公群、频道
+### 1.4 Top-Right "+" Menu in Chat
 
----
+  - **Start Group Chat**: Jump to contacts, select members, and create a group. The name is composed of nicknames (within 30 characters).
+  - **Face-to-Face Group**: Enter a 2-digit number to join. System verifies that the GPS of the applicant is within 100 meters.
+  - **Add Friend**: Enter the search page, input an Echo ID, and become friends upon approval.
+  - **Scan**: Pop up the QR code scanner to add friends.
 
-## 二、通讯录
+### 1.5 Agents
 
-### 2.1 申请好友
-- **单聊**：好友1v1聊天，申请好友的时候可以介绍自己
-- **私群**：从通讯录中添加创建，或者邀请好友添加群，不支持二维码和群号传播
-- **额度规则**：叠加总额度30个。名片申请(每天30个)，通讯录申请(每天30个)，搜索申请(每天30个)，外部添加(每天1个)，扫码申请(每天30个)，私群(每天30个)。接受：每天总额度50个。来自外部5个，来自名片申请(每天50个)，来自通讯录申请(每天50个)，来自搜索申请(每天50个)，扫码申请(每天50个)，私群(每天50个)
+Agents subscribed to via the "Discover" tab.
 
-### 2.2 通讯录列表
-- **好友Tab**：标签图谱｜字母，好友的过滤可以通过字母表排序过滤，也可以通过标签过滤。好友点进去以后，可以看到昵称，姓名，备注，电话，邮箱，母语，自己打的标签图谱（能力、状态、特点、社会、兴趣，交集，信任，阶层，学历，荣誉，公司，出生，资产，同事，同学，朋友，家人，恋人，书籍，情感，ego，三观，性格，常用地理位置距离），亲密度、契合度。有删除按钮，点击删除会提示双方的聊天记录等所有的一切都删除。
-- **私群Tab**：默认一个话题，可新建若干个话题。
-- **申请Tab**：好友申请列表
+  - **Official Agents**: Pay for official resources, talent, etc.
+  - **Avatar Agent**: The user's personal agent used to manage other agents.
+  - **Subscription Agents**: Agents subscribed to from the Discover tab.
+  - **Interaction Logic**: Agent automatically generates multiple-choice questions for confirmation; once clarified, tasks are executed. Results are interacted with for secondary corrections if they don't meet expectations.
+  - **Output**: Final products can be sent to email or stored in the cloud.
 
----
+### 1.6 Public Groups
 
-## 三、 发现 (Discover)
+Communities joined via the "Discover" tab.
 
-### 3.1 附近 (Nearby)
-### 3.1 附近
-5个栏目：人、动态、游戏房间、同城公群、同城频道
-- **人**：排序规则：综合排序、距离排序、契合度排序。点进去以后，可以申请好友，但是每人1天只有1个申请名额，有5个接收名额，用完就置灰。可以看见对方的发布的动态列表。
-- **动态**：展示周边动态。
-- **游戏房间**：游戏后，可以创建一起玩游戏的人的专属群，游戏里的人可以加入。附近的游戏房间会展示游戏的人中离你最近的人作为距离展示。方便后续的见面。
-- **同城公群**：附近的公群，主要目的是线下见面。
-- **同城频道**：附近的频道，主要目的是同城商家做广告。
+  - **Upgrade Rule**: Automatically upgrades to a "Topic Group" once members exceed 500 and heat reaches a certain level. Members can switch topics to chat.
+  - **Rule Updates**: Updates trigger automatic voting. Votes are weighted by contribution rather than being equal. Approved terms take effect.
+  - **More Sections**: The "three dots" menu reveals four columns: Members, Featured Posts, Rules, and AI Summary Reports. Featured posts and AI reports are categorized by topic. A "+" button allows for creating multimedia posts.
+  - **Voice Rooms**: Owners can start voice rooms with a limited number of speakers on stage; others listen. Members can apply to speak, approved by admins.
 
-### 3.2 公群
-公群属于大家公共建设，规则由大家踊跃发表意见，投票决定规则的执行。属于公共资产。收益也归属大家。只是不同的人的贡献不同，收益分配不同。主要贡献人：公群主，管理员，创作成员，消费成员，平台。
-- **话题**：每个群默认一个话题，可创建若干，切换话题聊天。
-- **AI总结报告**：可发布贴到话题下，每天总结聊天精华，由群主或者管理员审核确认，没有确认的，自动发布，如果没有价值，那么就不发帖。
-- **详情与加入**：公群点进去以后，可以查看群的规则的介绍，10个精华帖，可以申请加入，群主或者管理员审核通过以后就可以入群。
-- **黑名单**：群可以拉黑某些人，人也可以拉黑群，以后就不推荐了。
-- **进入公群**：自动记住上一次选择的话题。
+### 1.7 Channels
 
-### 3.3 频道
-创建人100%的生产，主要是商家，其他人就是用户，类似客服。
-- 频道点进去以后，可以查看频道的介绍，可以订阅。
-- 频道主可以拉黑某些人，人也可以拉黑频道，以后就不推荐了。
+Channels subscribed to via the "Discover" tab.
 
-### 3.4 智能体：Skills
-- 智能体进去以后，可以查看智能体的介绍，可以订阅。
-- 可以发布智能体，根据订阅用户使用的token计算收益。
+  - **Perspective Difference**: Appears as a private chat for fans, but as a group with infinite topics for the owner. Supports AI automated replies and agent training.
+  - **Permission Limits**: Only the channel owner can initiate calls or videos.
 
-### 3.5 语言包：方言包LoRA
-- 语言包可以展示使用的人数和热度。
+### 1.8 Input Method
 
-### 3.6 顺序排列
-附近、公群、频道、智能体、语言包
+  - **Voice First**: Defaults to voice; sent directly. Manual text mode is also available. Remembers the last used mode. Supports dialect plugins (users can create and publish their own).
+  - **Voice Display**: Text Mode / Voice Mode / Voice + Text Mode.
+
+### 1.9 Sort Order
+
+Private Chat, Private Group, Agent, Public Group, Channel.
 
 ---
 
-## 四、我
+## II. Contacts
 
-### 4.1 个人信息
-昵称、头像、Echo号、二维码、背景图、对外介绍描述
+### 2.1 Friend Requests
 
-### 4.2 设置
-- **母语**：语言偏好设置。
-- **翻译**：目标语言。翻译显示：仅译文/译文+原文。语音克隆。
-- **电话**：永久保存在云端/本地；自动录制，保存24小时；不录制。支持添加联系人有效。
-- **视频**：永久保存在云端/本地；自动录制，保存24小时；不录制。支持添加联系人有效。
-- **附近可见性**：设置是否出现在附近。
-- **动态**：对外展示，发布可设置可见范围（公开、好友、指定标签可见），从用户自己的视角，按照范围分类，从别人的视角，只能看到自己有权看见的动态。
-- **黑名单**：屏蔽管理。
-- **登出**：退出登录。
+  - **Private Chat**: 1v1 chat; introductions can be included during the request.
+  - **Private Group**: Created via contacts or invites; QR codes or group IDs are not supported for propagation.
+  - **Quota Rules**: Cumulative total quota of 30 per day for outgoing requests (Card, Contact, Search, Scan, Private Group). Receiving quota is 50 per day total.
+
+### 2.2 Contact List
+
+  - **Friends Tab**: Label Graph | Alphabetical. Filter by letters or labels. View details like Nickname, Name, Remarks, Phone, Email, Native Language, and custom Label Graphs (capabilities, status, traits, interests, trust, company, assets, school, personality, etc.), Affinity, and Compatibility. A delete button removes all chat history for both parties.
+  - **Private Group Tab**: One topic by default; multiple topics can be created.
+  - **Request Tab**: List of friend requests.
+
+---
+
+## III. Discover
+
+### 3.1 Nearby
+
+5 columns: People, Moments, Game Rooms, Local Public Groups, Local Channels.
+
+  - **People**: Sorted by Comprehensive, Distance, or Compatibility. One outgoing request per day; five receiving spots. View their moments.
+  - **Moments**: Displays nearby dynamic posts.
+  - **Game Rooms**: Create exclusive groups for players after a game. Displays the distance of the nearest player to facilitate meetups.
+  - **Local Public Groups**: Nearby public groups focused on offline meetings.
+  - **Local Channels**: Nearby channels focused on local merchant advertisements.
+
+### 3.2 Public Groups
+
+Built by the public; rules are decided by voting. These are public assets with revenue shared based on contribution (Owner, Admin, Creators, Consumers, Platform).
+
+  - **Topics**: One default topic; multiple can be created to switch between.
+  - **AI Summary Report**: Daily summaries of chat highlights posted under topics, reviewed by admins.
+  - **Details & Joining**: View rules and 10 featured posts before applying to join.
+  - **Blacklist**: Groups can block people, and people can block groups to stop recommendations.
+  - **Entering**: Automatically remembers the last selected topic.
+
+### 3.3 Channels
+
+100% production by the creator (merchants); users act as customers.
+
+  - View intro and subscribe. Supports mutual blacklisting.
+
+### 3.4 Agents: Skills
+
+  - View intro and subscribe. Users can publish agents and earn revenue based on token consumption.
+
+### 3.5 Language Packs: Dialect LoRA
+
+  - Displays user count and heat/popularity.
+
+### 3.6 Sort Order
+
+Nearby, Public Group, Channel, Agent, Language Pack.
+
+---
+
+## IV. Me
+
+### 4.1 Personal Info
+
+Nickname, Avatar, Echo ID, QR Code, Background Image, Personal Description.
+
+### 4.2 Settings
+
+  - **Native Language**: Language preference settings.
+  - **Translation**: Target language. Display: Translation Only / Translation + Original. Voice Cloning.
+  - **Call**: Save to Cloud/Local permanently; Auto-record (24h); Do not record. Valid for added contacts.
+  - **Video**: Save to Cloud/Local permanently; Auto-record (24h); Do not record. Valid for added contacts.
+  - **Nearby Visibility**: Toggle appearance in "Nearby."
+  - **Moments**: Set visibility (Public, Friends, Specific Labels). View your own posts filtered by scope; others see only what they have permission to see.
+  - **Blacklist**: Manage blocked entities.
+  - **Logout**: Sign out of the account.
 
 ---
