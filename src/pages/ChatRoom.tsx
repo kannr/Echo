@@ -370,7 +370,7 @@ const ChatRoom = () => {
         ) : (
           <div className="flex-1 flex items-center bg-card rounded-2xl ring-soft px-3 min-h-10">
             <input value={text} onChange={(e) => setText(e.target.value)} placeholder="说点什么…"
-              className="flex-1 bg-transparent text-[14px] placeholder:text-armani focus:outline-none py-2" />
+              className="flex-1 bg-transparent text-base placeholder:text-armani focus:outline-none py-2" />
           </div>
         )}
 
