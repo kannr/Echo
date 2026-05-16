@@ -1,11 +1,11 @@
-import PhoneShell from "@/components/echo/PhoneShell";
 import ChatRoom from "./ChatRoom";
 
-// Chat detail uses the phone shell but no bottom tab feels nicer; we still keep tab bar for consistency.
 const Page = () => (
-  <PhoneShell>
-    <ChatRoom />
-  </PhoneShell>
+  <div className="h-[100dvh] w-full flex items-stretch justify-center bg-secondary/60 overflow-hidden">
+    <div className="w-full max-w-[440px] flex flex-col bg-background shadow-[0_0_0_1px_hsl(var(--border)),0_30px_60px_-30px_hsl(25_30%_25%/0.25)] h-[100dvh]">
+      <ChatRoom />
+    </div>
+  </div>
 );
 
 export default Page;
